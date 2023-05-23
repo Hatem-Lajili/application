@@ -1,0 +1,57 @@
+<p>Selected Method: Scrum</p>
+<div class="container">
+  <div class="block">
+  <div class="form-container">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input type="text" placeholder="Perspectives" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>
+  </div>
+  <div class="block">
+  <div class="table-container" *ngIf="myControl.value === 'Time'">
+    <table>
+      <thead>
+        <tr>
+          <th>Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-row">
+          <td>Time Box Adherence<br><br>Mean Sprint Duration<br><br></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <div class="block">
+    <div class="button-container" *ngIf="myControl.value === 'Time'">
+      <button class="button-right" (click)="moveToSelected()">&gt;&gt;</button>
+        <button class="button-left" (click)="moveToAvailable()">&lt;&lt;</button>
+      </div>
+  </div>
+  <div class="block">
+    <div class="table-2" *ngIf="myControl.value === 'Time'">
+      <table>
+        <thead>
+          <tr>
+            <th>Selected</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-row">
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+  </div>
+</div>
+<button class="bottom-left-button" (click)="navigateToDataset()">Back</button>
+<button class="bottom-rigth-button" (click)="navigateToProcessMap()">Next</button>
