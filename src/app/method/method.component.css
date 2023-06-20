@@ -1,7 +1,9 @@
-.bottom-rigth-button {
-    position: fixed;
-    bottom: 70px;
-    right: 60px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+.highlighted-option {
+    background-color: blue !important;
+    color: white !important;
+  }
+
+  .large-width {
+    width: 18%; 
   }
   

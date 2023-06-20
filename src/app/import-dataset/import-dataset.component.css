@@ -1,0 +1,18 @@
+.import-button {
+    background-color: #f1f1f1;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .import-button {
+    background-color: #00b303;
+    color: aliceblue;
+  }
+  p{
+    margin-left: 23px;
+  }
+ 

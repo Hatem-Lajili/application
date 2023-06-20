@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-process',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProcessComponent implements OnInit {
 
-  constructor() { }
+  showDangerAlert = true; 
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit():void {
+    
   }
-
+  navigateToSummary(): void {
+    this.router.navigate(['/summary']);
+  }  
 }

@@ -1,19 +1,40 @@
-<p>Selected Method: Scrum</p>
+<div class="section">
+  <h1>Select perspective/kPIs</h1> 
+  <p>Dataset Imported: Project X.csv<br>
+    Selected Method: Scrum<br>
+    Dataset attributes checked: 4 out of 6 </p>
+</div>
 <div class="container">
   <div class="block">
-  <div class="form-container">
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input type="text" placeholder="Perspectives" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-            {{option}}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
-    </form>
+    <div class="form-container">
+      <form class="example-form">
+        <mat-form-field class="example-full-width large-width">
+          <input
+            #inputField
+            type="text"
+            placeholder="Perspectives"
+            aria-label="Number"
+            matInput
+            [formControl]="myControl"
+            [matAutocomplete]="auto"
+            [value]="highlightedOption"
+          />
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option
+              *ngFor="let option of filteredOptions | async"
+              [value]="option"
+              [ngClass]="{ 'highlighted-option': option === highlightedOption  }"
+              (mouseover)="highlightOption(option)"
+              (mouseout)="resetOption()"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
   </div>
-  </div>
+  
   <div class="block">
   <div class="table-container" *ngIf="myControl.value === 'Time'">
     <table>
@@ -24,7 +45,7 @@
       </thead>
       <tbody>
         <tr class="table-row">
-          <td>Time Box Adherence<br><br>Mean Sprint Duration<br><br></td>
+          <td>Mean Sprint Duration<br><br><br><br></td>
         </tr>
       </tbody>
     </table>
@@ -46,7 +67,7 @@
         </thead>
         <tbody>
           <tr class="table-row">
-            <td></td>
+            <td>Time Box Adherence<br><br><br><br></td>
           </tr>
         </tbody>
       </table>
@@ -54,4 +75,4 @@
   </div>
 </div>
 <button class="bottom-left-button" (click)="navigateToDataset()">Back</button>
-<button class="bottom-rigth-button" (click)="navigateToProcessMap()">Next</button>
+<button class="bottom-rigth-button" (click)="navigateToSummary()">Next</button>

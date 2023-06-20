@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { FlowService } from '../service/flow.service';
 
 
 @Component({
@@ -14,13 +15,16 @@ export class PerspectiveComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ['Time', 'Organisational/Team', 'Quality', 'Cost & Risk', 'Data', 'Control-Flow'];
   filteredOptions: Observable<string[]>;
-  constructor(private router: Router) {}
+  highlightedOption: string;
+
+  constructor(private router: Router, private flowService: FlowService) {}
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
         map(value => this._filter(value))
       );
+      
   }
 
   private _filter(value: string): string[] {
@@ -57,8 +61,17 @@ export class PerspectiveComponent implements OnInit {
     }
   }
 
-  navigateToProcessMap(): void {
-    this.router.navigate(['/process-map']);
+  navigateToSummary(): void {
+    this.router.navigate(['/summary']);
+    this.flowService.setApplyColorTransform3(true);
+
+  }
+  highlightOption(option: string): void {
+    this.highlightedOption = option;
+  }
+
+  resetOption(): void {
+    this.highlightedOption = null;
   }
   
 

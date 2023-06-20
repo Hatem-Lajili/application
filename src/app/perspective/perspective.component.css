@@ -1,7 +1,3 @@
-p{
-    margin: 40px;
-    padding: 30px;
-}
 
 .container {
   display: flex;
@@ -16,6 +12,7 @@ p{
 .form-container {
   flex: 1;
   padding: 20px;
+  margin-left: 30px;
 }
 
 .table-container {
@@ -27,8 +24,10 @@ p{
   padding: 10px;
   text-align: center;
   vertical-align: middle;
-  min-width: 200px; /* Adjust the width as needed */
+  min-width: 200px; 
   white-space: nowrap;
+  background-color: #f1f1f1;
+
 }
 
 .table-container thead th {
@@ -40,10 +39,11 @@ p{
   margin-right: 100px;
   border-collapse: collapse;
 
+
 }
 .button-container {
   position: absolute;
-  top: 37%;
+  top: 70.5%;
   left: 59%;
   transform: translate(-50%, -50%);
 }
@@ -53,21 +53,14 @@ p{
   padding: 10px 20px;
   font-size: 16px;
   background-color: #f1f1f1;
-  border: none;
+  border: 2px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
   margin: 0 10px;
 }
-
-.bottom-left-button {
-  position: fixed;
-  bottom: 70px;
-  left: 60px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+.large-width {
+  width: 80%; 
 }
-.bottom-rigth-button {
-  position: fixed;
-  bottom: 70px;
-  right: 60px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
+.highlighted-option {
+  background-color: blue !important;
+  color: white;}

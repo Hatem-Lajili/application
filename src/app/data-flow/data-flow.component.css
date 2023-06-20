@@ -1,0 +1,27 @@
+.icon-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .small-icon {
+    width: 45px; /* Adjust the width value to your desired size */
+  }
+  
+  .title {
+    margin-top: 5px;
+    text-align: center;
+  }
+ 
+  .color-transform {
+    filter: invert(15%) sepia(100%) saturate(5000%) hue-rotate(130deg);
+  }
+  

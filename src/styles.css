@@ -1,5 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:rgb(244, 233, 233);}
 
+.section {
+    margin: 70px;
+  }
+  .bottom-left-button {
+    position: fixed;
+    bottom: 70px;
+    left: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    font-size: 20px;
+    background: linear-gradient(to right, darkblue, darkred);
+    color: aliceblue;
+  }
+  .bottom-rigth-button {
+    position: fixed;
+    bottom: 70px;
+    right: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    font-size: 20px;
+    background: linear-gradient(to left, darkblue, darkred);
+    color: aliceblue;
+  }

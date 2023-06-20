@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FlowService } from '../service/flow.service';
 
 @Component({
   selector: 'app-dataset',
@@ -17,18 +18,25 @@ export class DatasetComponent implements OnInit {
     { case: 98762, activity: 'reinitiate request', timestamp: '23/05/2023 12:40', resource: 'Sara' },
     { case: 98763, activity: 'examine thoroughly', timestamp: '25/05/2023 14:20', resource: 'Sean' },
     { case: 98761, activity: 'decide', timestamp: '26/05/2023 15:30', resource: 'Sara' },
-    { case: 98764, activity: 'reject request', timestamp: '02/06/2023 9:00', resource: 'Pete' },
+    { case: 98764, activity: 'reject request', timestamp: '02/06/2023 09:00', resource: 'Pete' },
 
     // Add more data objects as needed
-  ];showDataSet: boolean = false;
+  ];showDataSet: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router , private flowService: FlowService) {}
 
   navigateToPerspective(): void {
     this.router.navigate(['/perspective/Scrum/time']);
+    this.flowService.setApplyColorTransform2(true);
+
   }
 
   ngOnInit() {
+    this.isChecked[1] = true;
+    this.isChecked[3] = true;
+    this.isChecked[4] = true;
+    this.isChecked[5] = true;
+
   }
   navigateToMethod() {
   this.router.navigate(['/method']);

@@ -53,10 +53,13 @@
   </table>
   
 </div>
-<div class="input-container">
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="List of recommendations" value="">
-    </mat-form-field>
-  </form>
-</div>
+<ng-container *ngIf="showDangerAlert">
+  <div class="mat-snackbar-container" aria-live="polite" aria-atomic="true">
+    <div class="mat-snackbar-wrapper">
+      <div class="mat-snackbar-content">
+        <span class="mat-snackbar-message">Danger! Please review the recommendations.</span>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<button class="bottom-left-button" (click)="navigateToSummary()">Back</button>

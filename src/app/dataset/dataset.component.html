@@ -1,6 +1,11 @@
 <!-- dataset.html -->
-<div class="container">
-<p>Selected method: Scrum<br/>Minimum set of attributes:</p>
+<div class="section">
+  <h1>Check dataset attributes</h1>
+  <p>Dataset Imported: Project X.csv<br/>Selected ASD method: Scrum</p>
+</div>
+
+<div>
+ <p class="p1"> Minimum set of attributes:</p>
   <table>
     <tr>
       <td>sprint Id</td>
@@ -8,7 +13,7 @@
     </tr>
     <tr>
       <td>project Id</td>
-      <td><button class="delete-button" (click)="toggleButton(1)" [ngClass]="{'checked': isChecked[1]}">x</button></td>
+      <td><button class="delete-button" (click)="toggleButton(1)" [ngClass]="{'checked': isChecked[1]}">✓</button></td>
     </tr>
     <tr>
       <td>Issue Id</td>
@@ -16,15 +21,15 @@
     </tr>
     <tr>
       <td>Tasks</td>
-      <td><button class="delete-button" (click)="toggleButton(3)" [ngClass]="{'checked': isChecked[3]}">x</button></td>
+      <td><button class="delete-button" (click)="toggleButton(3)" [ngClass]="{'checked': isChecked[3]}">✓</button></td>
     </tr>
     <tr>
       <td>Resource</td>
-      <td><button class="delete-button" (click)="toggleButton(4)" [ngClass]="{'checked': isChecked[4]}">x</button></td>
+      <td><button class="delete-button" (click)="toggleButton(4)" [ngClass]="{'checked': isChecked[4]}">✓</button></td>
     </tr>
     <tr>
       <td>Timestmp</td>
-      <td><button class="delete-button" (click)="toggleButton(5)" [ngClass]="{'checked': isChecked[5]}">x</button></td>
+      <td><button class="delete-button" (click)="toggleButton(5)" [ngClass]="{'checked': isChecked[5]}">✓</button></td>
     </tr>
   </table>
   <table class="middle-right-table" *ngIf="showDataSet">
@@ -42,28 +47,13 @@
     </tr>
   </table>
   
-  
-  <button class="open-button" (click)="toggleDataSet()">OPEN DATA SET</button>
+
 
 
 <button class="bottom-left-button" (click)="navigateToMethod()">Back</button>
 <button class="bottom-rigth-button" (click)="navigateToPerspective()">Next</button>
 
-<style>
-    .delete-button {
-      background-color: red;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .delete-button.checked {
-      background-color: green;
-    }
-  </style>
+
   <script>
    function toggleButton(index) {
     const buttons = document.getElementsByClassName('delete-button');
